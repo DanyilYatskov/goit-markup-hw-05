@@ -19,6 +19,7 @@
   --icons-gray: #afb1b8;
   --footer-icons-background: rgba(255, 255, 255, 0.1);
   --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --header-height: 80px;
 }
 
 /* Page general styles */
@@ -36,6 +37,16 @@ body {
   background-color: var(--page-background-color);
   font-family: 'Roboto', sans-serif;
   font-style: normal;
+  padding-top: var(--header-height);
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: var(--header-height);
+  background-color: #fff;
+  z-index: 99;
 }
 .link {
   text-decoration: none;
@@ -403,6 +414,13 @@ body {
   opacity: 1;
   transition: opacity 250ms var(--animation-timing);
 }
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-20%, -20%) scale(0.2);
+}
 .modal {
   position: absolute;
   top: 50%;
@@ -412,13 +430,6 @@ body {
   min-height: 581px;
   background-color: #fff;
   transition: transform 250ms var(--animation-timing);
-}
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-.backdrop.is-hidden .modal {
-  transform: translate(-10%, -10%) scale(0);
 }
 .modal-close {
   position: absolute;
