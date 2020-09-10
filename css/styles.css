@@ -37,9 +37,9 @@ body {
   background-color: var(--page-background-color);
   font-family: 'Roboto', sans-serif;
   font-style: normal;
-  padding-top: var(--header-height);
+  /* padding-top: var(--header-height); */
 }
-.header {
+/* .header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -47,7 +47,7 @@ body {
   min-height: var(--header-height);
   background-color: #fff;
   z-index: 99;
-}
+} */
 .link {
   text-decoration: none;
   transition: color 250ms var(--animation-timing),
